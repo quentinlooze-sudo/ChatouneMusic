@@ -14,15 +14,25 @@ export default function NavBar({ showBack = false, onBack }: NavBarProps) {
         <span className="text-primary">Music</span>
       </a>
 
-      {showBack && (
-        <button
-          onClick={onBack}
+      <div className="flex items-center gap-3">
+        <a
+          href="/favoris"
+          aria-label="Mes favoris"
           className="text-sm text-text-secondary hover:text-primary transition-colors
                      focus-visible:ring-4 focus-visible:ring-primary-30 focus:outline-none rounded-full px-2 py-1"
         >
-          ← Retour
-        </button>
-      )}
+          ❤️ Favoris
+        </a>
+        {showBack && (
+          <button
+            onClick={onBack}
+            className="text-sm text-text-secondary hover:text-primary transition-colors
+                       focus-visible:ring-4 focus-visible:ring-primary-30 focus:outline-none rounded-full px-2 py-1"
+          >
+            ← Retour
+          </button>
+        )}
+      </div>
     </nav>
   );
 }

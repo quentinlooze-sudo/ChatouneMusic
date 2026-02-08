@@ -8,7 +8,6 @@ import { getMoodEmoji } from "@/lib/moods";
 import MoodRecap from "@/components/MoodRecap";
 import TrackCard from "@/components/TrackCard";
 import TrackCardSkeleton from "@/components/TrackCardSkeleton";
-import PlayerBar from "@/components/PlayerBar";
 import Button from "@/components/ui/Button";
 
 export default function ResultsPage() {
@@ -22,7 +21,6 @@ export default function ResultsPage() {
     reset,
   } = useMoodContext();
   const router = useRouter();
-  const [playingTrackId, setPlayingTrackId] = useState<string | null>(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
@@ -33,7 +31,6 @@ export default function ResultsPage() {
 
   const handleRefresh = () => {
     setIsRefreshing(true);
-    setPlayingTrackId(null);
 
     // Petit délai pour montrer le skeleton
     setTimeout(() => {
@@ -54,8 +51,6 @@ export default function ResultsPage() {
     router.push("/mood");
   };
 
-  const playingTrack = tracks.find((t) => t.id === playingTrackId);
-
   if (!partner1.mood || !partner2.mood) {
     return null;
   }
@@ -75,9 +70,14 @@ export default function ResultsPage() {
           <span className="text-text-main">Chatoune</span>
           <span className="text-primary">Music</span>
         </a>
-        <span className="text-sm text-text-secondary">
+        <a
+          href="/favoris"
+          aria-label="Mes favoris"
+          className="text-sm text-text-secondary hover:text-primary transition-colors
+                     focus-visible:ring-4 focus-visible:ring-primary-30 focus:outline-none rounded-full px-2 py-1"
+        >
           ❤️ {favorites.size}
-        </span>
+        </a>
       </nav>
 
       <main id="main-content" className="flex-1 px-4 md:px-6 max-w-content mx-auto w-full pb-12">
@@ -115,13 +115,7 @@ export default function ResultsPage() {
               >
                 <TrackCard
                   track={track}
-                  isPlaying={playingTrackId === track.id}
                   isFavorite={favorites.has(track.id)}
-                  onPlay={() =>
-                    setPlayingTrackId(
-                      playingTrackId === track.id ? null : track.id
-                    )
-                  }
                   onFavorite={() => toggleFavorite(track.id)}
                   onSpotify={() =>
                     window.open(track.spotifyUrl, "_blank")
@@ -129,19 +123,6 @@ export default function ResultsPage() {
                 />
               </div>
             ))}
-          </div>
-        )}
-
-        {playingTrack && (
-          <div className="mb-8">
-            <PlayerBar
-              track={{
-                title: playingTrack.title,
-                artist: playingTrack.artist,
-                coverUrl: playingTrack.coverUrl,
-                spotifyId: playingTrack.spotifyId,
-              }}
-            />
           </div>
         )}
 

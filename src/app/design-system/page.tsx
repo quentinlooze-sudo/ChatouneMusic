@@ -9,7 +9,6 @@ import MoodSelector from "@/components/MoodCard";
 import TrackCard from "@/components/TrackCard";
 import TrackCardSkeleton from "@/components/TrackCardSkeleton";
 import NavBar from "@/components/NavBar";
-import PlayerBar from "@/components/PlayerBar";
 import StepCard from "@/components/StepCard";
 import MoodRecap from "@/components/MoodRecap";
 import FusionLoader from "@/components/FusionLoader";
@@ -47,7 +46,6 @@ export default function DesignSystemPage() {
   const [nameError, setNameError] = useState("");
   const [mood, setMood] = useState<MoodName | null>(null);
   const [energy, setEnergy] = useState(50);
-  const [playing, setPlaying] = useState(false);
   const [favorite, setFavorite] = useState(false);
 
   return (
@@ -113,25 +111,12 @@ export default function DesignSystemPage() {
           <div className="max-w-content space-y-3">
             <TrackCard
               track={MOCK_TRACK}
-              isPlaying={playing}
               isFavorite={favorite}
-              onPlay={() => setPlaying(!playing)}
               onFavorite={() => setFavorite(!favorite)}
               onSpotify={() => window.open(MOCK_TRACK.spotifyUrl)}
             />
             <TrackCardSkeleton />
           </div>
-        </Section>
-
-        <Section title="PlayerBar">
-          <PlayerBar
-            track={{
-              title: "Blinding Lights",
-              artist: "The Weeknd",
-              coverUrl: "https://placehold.co/48x48/1A1A2E/white?text=BL",
-              spotifyId: "0VjIjW4GlUZAMYd2vXMi4b",
-            }}
-          />
         </Section>
 
         <Section title="StepCard">

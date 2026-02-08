@@ -163,6 +163,26 @@ describe("TRACK_DATABASE — intégrité", () => {
     });
   });
 
+  it("chaque spotifyUrl correspond au format https://open.spotify.com/track/{id}", () => {
+    TRACK_DATABASE.forEach((track) => {
+      const expectedUrl = `https://open.spotify.com/track/${track.id}`;
+      expect(
+        track.spotifyUrl,
+        `"${track.title}" par ${track.artist} — URL attendue: ${expectedUrl}, obtenue: ${track.spotifyUrl}`
+      ).toBe(expectedUrl);
+    });
+  });
+
+  it("chaque ID Spotify est un identifiant base62 valide", () => {
+    const base62Regex = /^[a-zA-Z0-9]{20,25}$/;
+    TRACK_DATABASE.forEach((track) => {
+      expect(
+        base62Regex.test(track.id),
+        `"${track.title}" par ${track.artist} — ID invalide: "${track.id}"`
+      ).toBe(true);
+    });
+  });
+
   it("aucun doublon titre + artiste", () => {
     const seen = new Set<string>();
     TRACK_DATABASE.forEach((track) => {

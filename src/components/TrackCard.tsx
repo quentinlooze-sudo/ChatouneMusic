@@ -10,9 +10,7 @@ interface TrackCardProps {
     spotifyUrl: string;
     spotifyId: string;
   };
-  isPlaying?: boolean;
   isFavorite?: boolean;
-  onPlay?: () => void;
   onFavorite?: () => void;
   onSpotify?: () => void;
 }
@@ -50,9 +48,7 @@ function TrackAction({
 
 export default function TrackCard({
   track,
-  isPlaying = false,
   isFavorite = false,
-  onPlay,
   onFavorite,
   onSpotify,
 }: TrackCardProps) {
@@ -83,37 +79,6 @@ export default function TrackCard({
       </div>
 
       <div className="flex items-center gap-2">
-        <TrackAction
-          label={isPlaying ? `Pause ${track.title}` : `Écouter ${track.title}`}
-          onClick={onPlay}
-          isActive={isPlaying}
-          activeClass="bg-primary text-white scale-110 shadow-lg"
-          defaultClass="bg-primary-10 text-primary"
-        >
-          {isPlaying ? (
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <rect x="3" y="2" width="4" height="12" rx="1" />
-              <rect x="9" y="2" width="4" height="12" rx="1" />
-            </svg>
-          ) : (
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M4 2l10 6-10 6V2z" />
-            </svg>
-          )}
-        </TrackAction>
-
         <TrackAction
           label={
             isFavorite

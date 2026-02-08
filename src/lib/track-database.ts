@@ -11,6 +11,11 @@ import { CuratedTrack } from "@/types";
  * 1. Trouve-le sur Spotify
  * 2. Copie le lien de partage → extrait l'ID
  * 3. Tague-le avec les humeurs correspondantes
+ *
+ * TODO: Vérifier manuellement chaque lien Spotify (ouvrir l'URL et confirmer
+ * que le titre + artiste correspondent). Les IDs et formats d'URL sont validés
+ * par les tests automatisés, mais la correspondance contenu/ID nécessite une
+ * vérification humaine ou un appel à l'API Spotify.
  */
 export const TRACK_DATABASE: CuratedTrack[] = [
   // ══════════════════════════════════════════

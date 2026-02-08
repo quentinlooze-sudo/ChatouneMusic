@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)",
+      "Bash(xcopy \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\chatounemusic-temp\\\\*\" \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\ChatouneMusic\"\" /E /Y /I /exclude:c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\chatounemusic-temp\\\\.gitignore 2>&1 && copy /Y \"c:UsersRobinDocumentsDeveloppementchatounemusic-temp.gitignore\" \"c:UsersRobinDocumentsDeveloppementChatouneMusic.gitignore \")",
+      "Bash(npm install:*)",
+      "Bash(npx next build:*)",
+      "Bash(npm ls:*)",
+      "Bash(del \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\ChatouneMusic\\\\src\\\\app\\\\api\\\\auth\\\\spotify\\\\.gitkeep\")",
+      "Bash(del \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\ChatouneMusic\\\\src\\\\app\\\\api\\\\recommendations\\\\.gitkeep\")",
+      "Bash(del \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\ChatouneMusic\\\\src\\\\lib\\\\spotify.ts\")",
+      "Bash(del \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\ChatouneMusic\\\\src\\\\lib\\\\mood-playlists.ts\")",
+      "Bash(del \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\ChatouneMusic\\\\src\\\\app\\\\api\\\\auth\\\\spotify\\\\route.ts\")",
+      "Bash(del \"c:\\\\Users\\\\Robin\\\\Documents\\\\Developpement\\\\ChatouneMusic\\\\src\\\\app\\\\api\\\\recommendations\\\\route.ts\")",
+      "Bash(npm run build:*)",
+      "Bash(npm run test:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

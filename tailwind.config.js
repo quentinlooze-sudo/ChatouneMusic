@@ -1,0 +1,123 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#E91E63',
+          hover: '#C2185B',
+          10: 'rgba(233, 30, 99, 0.10)',
+          30: 'rgba(233, 30, 99, 0.30)',
+        },
+        'bg-main': '#FFF0F5',
+        'bg-gradient-mid': '#FFE4EC',
+        'text-main': '#1A1A2E',
+        'text-secondary': '#666666',
+        card: '#FFFFFF',
+        gold: '#FFD700',
+        success: '#4CAF50',
+        error: '#F44336',
+        spotify: '#1DB954',
+        'surface-dark': '#1A1A2E',
+        mood: {
+          joyeux: '#FFD54F',
+          romantique: '#F48FB1',
+          chill: '#81D4FA',
+          melancolique: '#B39DDB',
+          energique: '#FFB74D',
+          fetard: '#AED581',
+        },
+      },
+      fontFamily: {
+        heading: ['Poppins', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        'h1-mobile': ['2.5rem', { lineHeight: '1.2', fontWeight: '700' }],
+        'h1-desktop': ['3rem', { lineHeight: '1.2', fontWeight: '700' }],
+        'h2': ['1.5rem', { lineHeight: '1.3', fontWeight: '700' }],
+        'h3': ['1.125rem', { lineHeight: '1.4', fontWeight: '600' }],
+        'body': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }],
+        'caption': ['0.75rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'button-sm': ['0.875rem', { lineHeight: '1', fontWeight: '700' }],
+        'button-md': ['1rem', { lineHeight: '1', fontWeight: '700' }],
+        'button-lg': ['1.125rem', { lineHeight: '1', fontWeight: '700' }],
+      },
+      borderRadius: {
+        '2xl': '16px',
+        'xl': '12px',
+      },
+      boxShadow: {
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
+        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
+        'elevated': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+        'cta': '0 10px 15px -3px rgba(233, 30, 99, 0.3), 0 4px 6px -4px rgba(233, 30, 99, 0.2)',
+        'mood-joyeux': '0 4px 20px rgba(255, 213, 79, 0.25)',
+        'mood-romantique': '0 4px 20px rgba(244, 143, 177, 0.25)',
+        'mood-chill': '0 4px 20px rgba(129, 212, 250, 0.25)',
+        'mood-melancolique': '0 4px 20px rgba(179, 157, 219, 0.25)',
+        'mood-energique': '0 4px 20px rgba(255, 183, 77, 0.25)',
+        'mood-fetard': '0 4px 20px rgba(174, 213, 129, 0.25)',
+      },
+      keyframes: {
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'pulse-bar': {
+          '0%, 100%': { transform: 'scaleY(0.4)' },
+          '50%': { transform: 'scaleY(1)' },
+        },
+        'bounce-slow': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'scale-in': {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        'fade-in-up': 'fade-in-up 400ms ease forwards',
+        'pulse-bar': 'pulse-bar 1s ease-in-out infinite',
+        'bounce-slow': 'bounce-slow 2s ease-in-out infinite',
+        'scale-in': 'scale-in 300ms ease forwards',
+        'fade-in-up-1': 'fade-in-up 400ms ease 100ms forwards',
+        'fade-in-up-2': 'fade-in-up 400ms ease 200ms forwards',
+        'fade-in-up-3': 'fade-in-up 400ms ease 300ms forwards',
+        'fade-in-up-4': 'fade-in-up 400ms ease 400ms forwards',
+        'fade-in-up-5': 'fade-in-up 400ms ease 500ms forwards',
+        'pulse-bar-1': 'pulse-bar 1s ease-in-out infinite',
+        'pulse-bar-2': 'pulse-bar 1s ease-in-out 150ms infinite',
+        'pulse-bar-3': 'pulse-bar 1s ease-in-out 300ms infinite',
+        'pulse-bar-4': 'pulse-bar 1s ease-in-out 450ms infinite',
+        'pulse-bar-5': 'pulse-bar 1s ease-in-out 600ms infinite',
+      },
+      transitionDuration: {
+        'base': '300ms',
+        'slow': '500ms',
+      },
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+      },
+      backdropBlur: {
+        'card': '12px',
+      },
+      maxWidth: {
+        'page': '80rem',
+        'content': '64rem',
+        'narrow': '32rem',
+        'hero': '48rem',
+      },
+    },
+  },
+  plugins: [],
+}
